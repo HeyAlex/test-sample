@@ -29,5 +29,8 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'com.google.android.material:material:1.0.0'
-
+    implementation "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
+    implementation "androidx.appcompat:appcompat:1.1.0"
+//    implementation 'com.google.android.gms:play-services:6.5.+'
+//    implementation group: 'com.google.guava', name: 'guava', version: '15.0'
 }

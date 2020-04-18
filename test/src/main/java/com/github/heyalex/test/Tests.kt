@@ -26,8 +26,9 @@ open class Tests {
     @Test
     fun detailedTest() {
         onView(withResourceName("recycler_view")).perform(ScrollToBottomAction())
-        onView(withResourceName("bottom_sheet"))
-            .perform(setState(BottomSheetBehavior.STATE_COLLAPSED))
+        onView(withResourceName("material_card")).perform(MaterialCheck())
+//        onView(withResourceName("bottom_sheet"))
+//            .perform(setState(BottomSheetBehavior.STATE_COLLAPSED))
     }
 
     private fun setState(@BottomSheetBehavior.State state: Int): ViewAction? {
@@ -49,10 +50,10 @@ open class Tests {
         }
     }
 
-    private fun isBottomSheet(): TypeSafeMatcher<View?> {
-        return object : TypeSafeMatcher<View?>() {
-            override fun matchesSafely(view: View?): Boolean {
-                return BottomSheetBehavior.from(view) != null
+    private fun isBottomSheet(): TypeSafeMatcher<View> {
+        return object : TypeSafeMatcher<View>() {
+            override fun matchesSafely(view: View): Boolean {
+                return BottomSheetBehavior.from<View>(view) != null
             }
 
             override fun describeTo(description: Description) {

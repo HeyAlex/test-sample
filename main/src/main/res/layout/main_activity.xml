@@ -10,6 +10,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/material_card"
+        android:layout_width="300dp"
+        android:layout_height="400dp"/>
+
     <LinearLayout
         android:id="@+id/bottom_sheet"
         android:layout_width="match_parent"

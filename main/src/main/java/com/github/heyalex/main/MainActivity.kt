@@ -2,9 +2,9 @@ package com.github.heyalex.main
 
 import android.app.Activity
 import android.os.Bundle
-import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.card.MaterialCardView
 
 class MainActivity : Activity() {
 
@@ -12,9 +12,14 @@ class MainActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
-        recyclerView.isAnimating
-        val bottomSheetBehavior = BottomSheetBehavior.from<LinearLayout>(findViewById(R.id.bottom_sheet))
-        bottomSheetBehavior.isHideable = true
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+
+        if (findViewById<AppBarLayout>(R.id.material_card).isLiftOnScroll) {
+            recyclerView.isAnimating
+        }
+
+//        val bottomSheetBehavior = BottomSheetBehavior.from<LinearLayout>(findViewById(R.id.bottom_sheet))
+//        bottomSheetBehavior.isHideable = true
+//        bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
     }
+
 }
